@@ -41,7 +41,7 @@ FastAPI & Aiogram Demo Project
 
 Склонируйте репозиторий:
 
-    git clone https://github.com/ваш-проект/название.git](https://github.com/mikheyev9/Fastapi-Aiogram_Demo.git
+    git clone https://github.com/mikheyev9/Fastapi-Aiogram_Demo.git
     cd Fastapi-Aiogram_Demo
 
 2. Настройка переменных окружения

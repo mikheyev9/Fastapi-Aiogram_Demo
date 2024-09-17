@@ -41,61 +41,29 @@ FastAPI & Aiogram Demo Project
 
 Склонируйте репозиторий:
 
-bash
-
 git clone https://github.com/ваш-проект/название.git](https://github.com/mikheyev9/Fastapi-Aiogram_Demo.git
-cd название
+cd Fastapi-Aiogram_Demo
 
 2. Настройка переменных окружения
 
 Создайте файл .env на основе примера:
 
-bash
-
 cp .env.example .env
 
 Отредактируйте .env файл, чтобы указать необходимые переменные, такие как данные для подключения к PostgreSQL, Redis, и токен для вашего Telegram бота.
-Пример .env файла:
 
-env
-
-# Настройки базы данных PostgreSQL
-DB_USER=myuser
-DB_PASS=mypassword
-DB_HOST=postgres
-DB_PORT=5432
-DB_NAME=mydatabase
-DATABASE_URL=postgresql+asyncpg://${DB_USER}:${DB_PASS}@${DB_HOST}:${DB_PORT}/${DB_NAME}
-
-# Секретные ключи и настройки безопасности
-SECRET_KEY=your_secret_key
-ALGORITHM=HS256
-ACCESS_TOKEN_EXPIRE_MINUTES=30
-
-# Настройки Redis
-REDIS_HOST=redis
-REDIS_PORT=6379
-
-# Токен Telegram бота
-BOT_TOKEN=1234567890:ABCDEF1234567890abcdef1234567890
-
-# URL API для взаимодействия бота с FastAPI
-BASE_URL=http://backend:8000
 
 3. Запуск с помощью Docker Compose
 
 Запустите контейнеры:
 
-bash
-
 make up
 
 Это автоматически установит Docker, если он отсутствует, проверит его версию, и запустит необходимые контейнеры для работы проекта.
+
 4. Остановка контейнеров
 
 Для остановки и удаления контейнеров выполните:
-
-bash
 
 make down
 

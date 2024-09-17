@@ -43,7 +43,7 @@ FastAPI & Aiogram Demo Project
 
 bash
 
-git clone https://github.com/ваш-проект/название.git
+git clone https://github.com/ваш-проект/название.git](https://github.com/mikheyev9/Fastapi-Aiogram_Demo.git
 cd название
 
 2. Настройка переменных окружения

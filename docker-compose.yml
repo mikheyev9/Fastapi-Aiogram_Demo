@@ -1,0 +1,67 @@
+services:
+  # Контейнер для Postgres
+  postgres:
+    image: postgres:14
+    container_name: postgres_db_prod
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data  # Сохранение данных на локальном диске
+    ports:
+      - "5432:5432"
+    restart: always
+    networks:
+      - my_network
+
+  # Контейнер для Redis
+  redis:
+    image: redis:6
+    container_name: redis_cache_prod
+    volumes:
+      - ./redis_data:/data  # Локальное хранилище данных Redis
+    ports:
+      - "6379:6379"
+    restart: always
+    networks:
+      - my_network
+
+  # Контейнер для backend (FastAPI)
+  backend:
+    build:
+      context: ./FastapiDemp
+    container_name: fastapi_backend
+    env_file:
+      - .env
+    volumes:
+      - ./FastapiDemp:/fastapi_app
+    depends_on:
+      - postgres
+      - redis
+    restart: always
+    networks:
+      - my_network
+    ports:
+      - "8000:8000"
+
+
+  # Контейнер для бота (Aiogram)
+  bot:
+    build:
+      context: ./AiogramDemo
+    container_name: telegram_bot
+    env_file:
+      - .env
+    volumes:
+      - ./AiogramDemo:/app
+      - ./logs:/logs
+    depends_on:
+      - redis
+    restart: always
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge

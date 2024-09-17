@@ -1,0 +1,6 @@
+[submodule "AiogramDemo"]
+	path = AiogramDemo
+	url = https://github.com/mikheyev9/AiogramDemo.git
+[submodule "FastapiDemp"]
+	path = FastapiDemp
+	url = https://github.com/mikheyev9/FastapiDemp.git

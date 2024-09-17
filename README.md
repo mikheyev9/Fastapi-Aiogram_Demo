@@ -48,7 +48,7 @@ FastAPI & Aiogram Demo Project
 
 Создайте файл .env на основе примера:
 
-cp .env.example .env
+    cp .env.example .env
 
 Отредактируйте .env файл, чтобы указать необходимые переменные, такие как данные для подключения к PostgreSQL, Redis, и токен для вашего Telegram бота.
 

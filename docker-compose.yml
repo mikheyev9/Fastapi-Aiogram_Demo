@@ -21,6 +21,7 @@ services:
     container_name: redis_cache_prod
     volumes:
       - ./redis_data:/data  # Локальное хранилище данных Redis
+      - ./my_redis.conf:/usr/local/etc/redis/redis.conf
     ports:
       - "6379:6379"
     restart: always

@@ -27,6 +27,7 @@ services:
     restart: always
     networks:
       - my_network
+    command: redis-server /usr/local/etc/redis/redis.conf
 
   # Контейнер для backend (FastAPI)
   backend:
